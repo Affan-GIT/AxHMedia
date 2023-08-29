@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="global.css" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script src="./javascript/carousal.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/3ff1631ff9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          screens: {
+            sm: "480px",
+            md: "768px",
+            lg: "976px",
+            xl: "1440px",
+          },
+          colors: {
+            darkPrimary: "#262322",
+            darkSecondary: "#34113F",
+            accentPrimary: "#c54a4d",
+            accentSecondary: "#e09c6f",
+            light: "#F5EDF0",
+            lightGray: "lightgray",
+            gray: "gray",
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        h1 {
+          @apply text-center;
+        }
+
+        section {
+          @apply px-8 mx-auto my-16;
+        }
+      }
+
+      @layer components {
+        .agencyStat {
+          @apply bg-darkPrimary w-full rounded-md p-2 md:p-3 lg:p-5 text-light text-sm md:text-xl;
+        }
+
+        .agencyStat span:nth-of-type(1) {
+          @apply h-full flex items-start text-xs whitespace-nowrap;
+        }
+
+        .agencyStat span:nth-of-type(2) {
+          @apply text-3xl md:text-5xl text-accentPrimary font-bold;
+        }
+
+        .CTA {
+          @apply bg-accentPrimary px-8 py-2 rounded-xl text-light mt-5 mx-auto block w-max no-underline;
+        }
+
+        .result {
+          @apply w-[300px] aspect-[3/4] bg-darkPrimary rounded-3xl flex-shrink-0 mr-12 snap-center;
+        }
+
+        .result:last-child {
+          @apply mr-0;
+        }
+
+        .dot {
+          @apply w-3 h-3 rounded-full;
+        }
+
+        @layer utilities {
+          @variants responsive {
+            .no-scrollbar::-webkit-scrollbar {
+              display: none;
+            }
+            .no-scrollbar {
+              -ms-overflow-style: none; /* IE and Edge */
+              scrollbar-width: none; /* Firefox */
+            }
+          }
+        }
+      }
+    </style>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
+    <title>AXH Media</title>
+  </head>
+  <body class="bg-light">
+    <header
+      class="flex px-4 md:px-12 pt-4 items-center justify-center md:justify-between"
+    >
+      <div class="flex-1">
+        <img src="./images/logo.svg" alt="" class="w-[150px] mt-3" />
+      </div>
+      <a
+        class="hidden md:inline w-max text-accentPrimary underline px-3 py-1 rounded-xl text-xl cursor-pointer mr-5"
+        href="#calender"
+      >
+        Schedule your FREE audit call now
+      </a>
+      <div class="flex items-center gap-5 text-xl">
+        <a href="https://instagram.com" target="_blank">
+          <i class="fa fa-brands fa-instagram cursor-pointer"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <i class="fa fa-brands fa-facebook cursor-pointer"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank">
+          <i class="fa fa-brands fa-youtube cursor-pointer"></i>
+        </a>
+        <a class="cursor-pointer" href="https://tiktok.com" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+            />
+          </svg>
+        </a>
+      </div>
+    </header>
+    <article class="overflow-hidden">
+      <section
+        class="flex flex-col md:flex-row items-center justify-center md:px-20 gap-5 md:gap-10 lg:gap-20"
+      >
+        <div class="prose md:prose-lg xl:prose-2xl text-center">
+          <h1>
+            We Generate <span class="text-accentPrimary">Quote-Ready</span> Home
+            Improvement Leads for You
+          </h1>
+          <h3 class="text-xl flex flex-col">
+            <span>
+              Get 10 New Quote-Ready Leads
+              <span class="font-bold">Within 30 Days</span> or
+            </span>
+            <span class="italic">You Don’t Pay</span>
+          </h3>
+
+          <a class="CTA hover:scale-[1.05] transition-all" href="#calender"
+            >Let's Chat</a
+          >
+        </div>
+        <div
+          class="aspect-[9/16] w-[300px] bg-darkPrimary rounded-[30px] flex-shrink-0"
+        ></div>
+      </section>
+      <!-- <section class="px-0">
+        <div
+          class="grid grid-rows-2 grid-cols-2 items-center uppercase gap-y-3 gap-x-4 px-5 md:px-20 max-w-5xl mx-auto place-items-center relative"
+        >
+          <span class="agencyStat">
+            <span>Revenue Generated</span>
+            <span>$150M+</span>
+          </span>
+          <span class="agencyStat">
+            <span>Platforms</span>
+            <span>15+</span>
+          </span>
+          <span class="agencyStat">
+            <span>Clients helped </span>
+            <span>50</span>
+          </span>
+          <span class="agencyStat">
+            <span>Services Offered</span>
+            <span>1</span>
+          </span>
+
+      </section> -->
+
+      <section class="my-0">
+        <div class="flex justify-center md:px-1 lg:px-20">
+          <div>
+            <div class="prose lg:prose-lg xl:prose-2xl mx-auto mb-16">
+              <h1>Our <span class="text-accentSecondary">Process</span></h1>
+            </div>
+
+            <div
+              class="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10"
+            >
+              <div
+                class="w-[300px] h-[200px] bg-darkPrimary rounded-xl flex-shrink-0 text-light prose px-4 py-3"
+              >
+                <h2 class="text-accentSecondary my-0 mb-1">Gather Content</h2>
+                <p class="leading-6">
+                  In the initial step, we collect visuals that highlight your
+                  craftsmanship. These form the foundation of our strategy,
+                  serving to attract a greater number of potential clients to
+                  your business.
+                </p>
+              </div>
+              <div></div>
+              <div
+                class="w-[300px] h-[200px] bg-darkPrimary rounded-xl flex-shrink-0 text-light prose px-4 py-3"
+              >
+                <h2 class="text-accentSecondary my-0 mb-1">Launch Ads</h2>
+                <p class="leading-6">
+                  Next, we launch ads based on the content we've collected.
+                  These ads are strategically designed and placed on popular
+                  social media platforms to capture clients attention.
+                </p>
+              </div>
+              <div></div>
+              <div
+                class="w-[300px] h-[200px] bg-darkPrimary rounded-xl flex-shrink-0 text-light prose px-4 py-3"
+              >
+                <h2 class="text-accentSecondary my-0 mb-1">Generate Leads</h2>
+                <p class="leading-6">
+                  Finally, we collect information from individuals who are
+                  genuinely interested in your services. Prioritising
+                  quote-ready leads and eliminating tire kickers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="prose md:prose-lg xl:prose-2xl mb-8 mx-auto">
+          <h1 class="text-xl">Our Magic Touch</h1>
+        </div>
+        <div class="prose md:prose-2xl xl:prose-2xl mb-16 mx-auto text-center">
+          <p class="text-lg text-center leading-5">
+            We are a Hyderabad-based agency dedicated to assisting home
+            improvement companies. Our expertise lies in generating high-quality
+            leads that are ready for quotes. We achieve this by strategically
+            advertising on popular social media platforms. With our targeted
+            approach, you can focus on your core work while experiencing
+            seamless business growth driven by genuinely interested clients. Our
+            services ensure that your business expands smoothly and efficiently.
+          </p>
+        </div>
+        <div class="relative">
+          <div
+            id="carousal"
+            class="sm:mx-[75px] md:mx-[100px] lg:md-0 flex h-max overflow-x-scroll overflow-y-hidden px-6 no-scrollbar snap-x snap-mandatory"
+          >
+            <div class="result" data-index="0"></div>
+            <div class="result" data-index="1"></div>
+            <div class="result" data-index="2"></div>
+            <div class="result" data-index="3"></div>
+            <div class="result" data-index="4"></div>
+            <div class="result" data-index="5"></div>
+          </div>
+          <button data-carousal-button-left="-1">
+            <i
+              class="fa fa-solid fa-caret-left text-darkSecondary absolute top-1/2 translate-y-[-60%] left-[-30px] sm:left-[-10px] text-7xl"
+            ></i>
+          </button>
+          <button data-carousal-button-right="1">
+            <i
+              class="fa fa-solid fa-caret-right text-darkSecondary absolute top-1/2 translate-y-[-60%] right-[-30px] sm:right-[-10px] text-7xl"
+            ></i>
+          </button>
+          <div
+            id="carousal-dots"
+            class="md:hidden flex absolute top-full justify-center w-full mt-2 gap-3"
+          >
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </section>
+      <section id="calender">
+        <div class="flex flex-col-reverse md:flex-row items-center gap-4">
+          <div class="md:w-1/2 md:p-10">
+            <div
+              class="calendly-inline-widget h-max"
+              data-url="https://calendly.com/axhmedia/zoom-meeting"
+              style="min-width: 320px; height: 700px"
+            ></div>
+          </div>
+          <div class="prose lg:prose-lg md:w-1/2 md:p-8">
+            <h1>Schedule Your FREE Audit Call Now</h1>
+            <p>
+              Schedule your FREE call now and learn exactly what you need to
+              take your marketing game to the next level.
+            </p>
+            <p>
+              Think of this call as free advice. We'll break down advertisement
+              and provide specific guidance for your business
+            </p>
+            <h3>What you will gain from this call:</h3>
+            <ul>
+              <li>Get to know us and our philosophy</li>
+              <li>Find cracks in your businesses that we can fix</li>
+              <li>
+                Understand our process in detail and with complete transparency
+              </li>
+              <li>Get a free quote from us</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="prose md:prose-lg xl:prose-2xl">
+        <h1>Get in Touch</h1>
+        <p class="text-center mx-auto text-xl xl:text-3xl">
+          Let's chat and create a tailored marketing plan so that your business
+          can achieve the growth it deserves
+        </p>
+        <a
+          class="CTA hover:scale-[1.05] transition-all"
+          href="mailto:affanhamid@axhmedia.com"
+          >Contact Us</a
+        >
+      </section>
+    </article>
+    <footer
+      class="border-t-2 border-darkSecondary mt-4 flex justify-center gap-5 py-3 text-xs md:text-lg text-center"
+    >
+      <div>+917057523722</div>
+      <a href="./privacy policy.html">Privacy Policy</a>
+      <div>All rights Reserved</div>
+      <a href="./modern slavery statement.html">Modern Slavery Statement</a>
+      <div>AXH Media 2023</div>
+    </footer>
+  </body>
+</html>
